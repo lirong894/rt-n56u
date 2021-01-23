@@ -6,9 +6,8 @@ CXX=g++ $(CPUFLAGS)
 AR=ar
 RANLIB=ranlib
 
-COPTS=$(CFLAGS) -Os
+COPTS=$(CFLAGS) -O3
 COPTS+=$(if $(CONFIG_IPV6),-DOPENSSL_USE_IPV6=1,)
-COPTS+=-DOPENSSL_SMALL_FOOTPRINT
 COPTS+=-DOPENSSL_PREFER_CHACHA_OVER_GCM
 
 LOPTS=-Wl,--gc-sections -L$(DESTDIR)/lib
@@ -81,6 +80,7 @@ romfs:
 	cp -fP $(DESTDIR)/lib/libssl.so* $(ROMFSDIR)/lib
 	cp -fP $(DESTDIR)/lib/libcrypto.so* $(ROMFSDIR)/lib
 	$(ROMFSINST) /etc_ro/openssl.cnf
+	$(ROMFSINST) /etc_ro/ca-certificates.crt
 ifeq ($(CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE),y)
 	$(ROMFSINST) $(SRC_NAME)/apps/openssl /usr/bin/openssl
 endif

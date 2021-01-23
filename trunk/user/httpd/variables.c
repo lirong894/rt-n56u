@@ -598,7 +598,7 @@
 			{"dhcp_staticnum_x", "", NULL, EVM_RESTART_DHCPD},
 			{"dnsmasq.hosts", "File", NULL, EVM_RESTART_DHCPD},
 			{"dnsmasq.dnsmasq.conf", "File", NULL, EVM_RESTART_DHCPD},
-			{"dnsmasq.dnsmasq.servers", "File", NULL, EVM_RESTART_DHCPD},
+			{"dnsmasq.dhcp.conf", "File", NULL, EVM_RESTART_DHCPD},
 			{"http_access", "", NULL, EVM_RESTART_HTTPD},
 			{"http_proto", "", NULL, EVM_RESTART_HTTPD},
 			{"http_lanport", "", NULL, EVM_RESTART_HTTPD},
@@ -971,6 +971,7 @@
 			{"wyy_musicapptype", "", NULL, EVM_RESTART_WYY},
 			{"wyy_coustom_server", "", NULL, EVM_RESTART_WYY},
 			{"wyy_coustom_music", "", NULL, EVM_RESTART_WYY},
+			{"wyy_flac", "", NULL, EVM_RESTART_WYY},
 			{"wyy_staticnum_x", "", NULL, EVM_RESTART_WYY},
 			{"WIPList", "Group", ARGV((char*)variables_WyyConf_WIPList, "8", "55", "wyy_staticnum_x"), EVM_RESTART_WYY},
 			{0,0,0,0}
